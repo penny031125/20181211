@@ -2,16 +2,16 @@
     <style>
         body {
             font-family: Sans-serif;
-            font-size: 30px;
+            font-size: 12px;
         }
 
         .slice {
             cursor: pointer;
         }
 
-         .slice .main-arc {
+        .slice .main-arc {
             stroke: #fff;
-            stroke-width: 6px;
+            stroke-width: 1px;
         }
 
         .slice .hidden-arc {
@@ -105,7 +105,8 @@
 
             newSlice.append('path')
                 .attr('class', 'main-arc')
-                .style('fill', d => color((d.children ? d : d.parent).data.name))
+                //.style('fill', d => color((d.children ? d : d.parent).data.name))
+                .style('fill', d=>'#'+Math.floor(Math.random()*16777215).toString(16))
                 .attr('d', arc);
 
             newSlice.append('path')
